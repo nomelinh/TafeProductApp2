@@ -15,19 +15,23 @@
 
         <!-- Total Payment -->
         <Label Content="Total Payment $:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,140,0,0" Width="100"/>
-        <TextBlock Name="totalPaymentTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="145,145,0,0"/>
+        <TextBlock Name="totalPaymentTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="145,140,0,0"/>
 
         <!-- Total Charge After Delivery Charge -->
-        <Label Content="Total Charge after adding &#xD;&#xA;the delivery charge ($25):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,180,0,0" Width="210" Height="45"/>
-        <TextBox Name="TotalChargeTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="104" Margin="0,194,0,0"/>
+        <Label Content="Total Charge after adding the &#xA;delivery charge ($25):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,180,0,0" Width="210" Height="40"/>
+        <TextBox Name="totalChargeAfterDeliveryTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="247,185,0,0"/>
 
-        <!-- Total Charge After Wrapping Charge -->
-        <Label Content="Total Charge after adding &#xD;&#xA;the wrap charge ($5):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,230,0,0" Width="210" Height="45"/>
-        <TextBox Name="wrapChargeTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="104" Margin="0,244,0,0"/>
+        <!-- Total Charge After Wrap Charge -->
+        <Label Content="Total Charge after adding the &#xA;wrap charge ($5):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,220,0,0" Width="210" Height="40"/>
+        <TextBox Name="totalChargeAfterWrapTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="247,225,0,0"/>
+
+        <!-- Total Charge After GST -->
+        <Label Content="Total Charge After GST @10%:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,260,0,0" Width="210" Height="40"/>
+        <TextBox Name="totalChargeAfterGstTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="247,265,0,0"/>
 
         <!-- Buttons (Calculate, Clear, Close) -->
-        <Button Name="calculateButton" Content="Calculate" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Margin="0,186,53,0" Click="calculateButton_Click"/>
-        <Button Name="clearButton" Content="Clear" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Margin="0,226,53,0" Click="clearButton_Click"/>
-        <Button Name="closeButton" Content="Close" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Margin="0,266,53,0" Click="closeButton_Click"/>
+        <Button Name="calculateButton" Content="Calculate" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Margin="0,180,30,0" Click="calculateButton_Click"/>
+        <Button Name="clearButton" Content="Clear" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Margin="0,220,30,0" Click="clearButton_Click"/>
+        <Button Name="closeButton" Content="Close" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Margin="0,260,30,0" Click="closeButton_Click"/>
     </Grid>
 </Window>

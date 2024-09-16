@@ -40,17 +40,26 @@ namespace ProductApps
                 decimal totalPayment = price * quantity;
                 totalPaymentTextBlock.Text = totalPayment.ToString("C"); // Display as currency
 
-                // Add delivery charge ($25) and wrap charge ($5)
+                // Add delivery charge ($25)
                 decimal deliveryCharge = 25.00M;
+                decimal totalChargeAfterDelivery = totalPayment + deliveryCharge;
+
+                // Display total charge after delivery charge
+                totalChargeAfterDeliveryTextBox.Text = totalChargeAfterDelivery.ToString("C");
+
+                // Add wrap charge ($5)
                 decimal wrapCharge = 5.00M;
+                decimal totalChargeAfterWrap = totalChargeAfterDelivery + wrapCharge;
 
-                // Total charge after adding delivery charge
-                decimal totalChargeWithDelivery = totalPayment + deliveryCharge;
-                TotalChargeTextBox.Text = totalChargeWithDelivery.ToString("C"); // Display total charge after delivery charge
+                // Display the total charge after adding both delivery and wrap charges
+                totalChargeAfterWrapTextBox.Text = totalChargeAfterWrap.ToString("C"); // Display as currency
 
-                // Total charge after adding both delivery and wrap charges
-                decimal totalChargeWithWrap = totalChargeWithDelivery + wrapCharge;
-                wrapChargeTextBox.Text = totalChargeWithWrap.ToString("C"); // Display total charge after wrap charge
+                // Calculate GST (10%)
+                decimal gst = totalChargeAfterWrap * 0.10M;
+                decimal totalChargeAfterGst = totalChargeAfterWrap + gst;
+
+                // Display the total charge after GST
+                totalChargeAfterGstTextBox.Text = totalChargeAfterGst.ToString("C"); // Display as currency
             }
             catch (FormatException)
             {
