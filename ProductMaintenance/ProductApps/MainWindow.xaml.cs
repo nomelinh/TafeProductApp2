@@ -40,18 +40,24 @@ namespace ProductApps
                 decimal totalPayment = price * quantity;
                 totalPaymentTextBlock.Text = totalPayment.ToString("C"); // Display as currency
 
-                // Add delivery charge ($25)
+                // Add delivery charge ($25) and wrap charge ($5)
                 decimal deliveryCharge = 25.00M;
-                decimal totalCharge = totalPayment + deliveryCharge;
+                decimal wrapCharge = 5.00M;
 
-                // Display the total charge
-                TotalChargeTextBox.Text = totalCharge.ToString("C"); // Display as currency
+                // Total charge after adding delivery charge
+                decimal totalChargeWithDelivery = totalPayment + deliveryCharge;
+                TotalChargeTextBox.Text = totalChargeWithDelivery.ToString("C"); // Display total charge after delivery charge
+
+                // Total charge after adding both delivery and wrap charges
+                decimal totalChargeWithWrap = totalChargeWithDelivery + wrapCharge;
+                wrapChargeTextBox.Text = totalChargeWithWrap.ToString("C"); // Display total charge after wrap charge
             }
             catch (FormatException)
             {
                 MessageBox.Show("Please enter valid data for price and quantity.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         // Clear Button Click Event
         private void clearButton_Click(object sender, RoutedEventArgs e)
