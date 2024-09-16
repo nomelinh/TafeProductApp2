@@ -42,16 +42,31 @@ namespace ProductApps
 
                 // Add delivery charge ($25)
                 decimal deliveryCharge = 25.00M;
-                decimal totalCharge = totalPayment + deliveryCharge;
+                decimal totalChargeAfterDelivery = totalPayment + deliveryCharge;
 
-                // Display the total charge
-                TotalChargeTextBox.Text = totalCharge.ToString("C"); // Display as currency
+                // Display total charge after delivery charge
+                totalChargeAfterDeliveryTextBox.Text = totalChargeAfterDelivery.ToString("C");
+
+                // Add wrap charge ($5)
+                decimal wrapCharge = 5.00M;
+                decimal totalChargeAfterWrap = totalChargeAfterDelivery + wrapCharge;
+
+                // Display the total charge after adding both delivery and wrap charges
+                totalChargeAfterWrapTextBox.Text = totalChargeAfterWrap.ToString("C"); // Display as currency
+
+                // Calculate GST (10%)
+                decimal gst = totalChargeAfterWrap * 0.10M;
+                decimal totalChargeAfterGst = totalChargeAfterWrap + gst;
+
+                // Display the total charge after GST
+                totalChargeAfterGstTextBox.Text = totalChargeAfterGst.ToString("C"); // Display as currency
             }
             catch (FormatException)
             {
                 MessageBox.Show("Please enter valid data for price and quantity.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         // Clear Button Click Event
         private void clearButton_Click(object sender, RoutedEventArgs e)
